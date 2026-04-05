@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite"><test verbose="2"
+    preserve-order="true" name="C:/Users/intel/IdeaProjects/SeleniumFramework1">
+    <classes>
+        <class name="framework.tests.OrangeHRTestcases.OrangeHRLogin">
+            <methods>
+                <include name="testORloginPositive"/>
+                <include name="testORloginNegative"/>
+            </methods>
+        </class>
+        <class name="framework.tests.VWOLoginTestcases.PageFactory_Testcases.TestVWO_Login">
+            <methods><include name="testLoginNegativeVWO"/>
+            </methods>
+        </class>
+        <class name="framework.tests.VWOLoginTestcases.PageObjectModel_Testcases.Test_VWOLogin">
+            <methods>
+                <include name="testLoginNegativeVWO"/>
+                <include name="testLoginPositiveVWO"/>
+            </methods>
+        </class>
+        <class name="framework.tests.sampleTestcases.TestRun">
+        <methods>
+            <include name="testMethod"/>
+        </methods>
+        </class>
+    </classes>
+</test>
+
+
+</suite>
