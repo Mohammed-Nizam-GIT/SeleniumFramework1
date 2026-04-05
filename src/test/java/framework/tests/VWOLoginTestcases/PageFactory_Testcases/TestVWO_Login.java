@@ -22,7 +22,8 @@ public class TestVWO_Login extends CommonToAllTest {
         LoginPagePF loginPagePF = new LoginPagePF(driver);
         String error_message = loginPagePF.loginToVWOLoginInvalidCreds(PropertiesReader.readKey("invalid_username"), PropertiesReader.readKey("invalid_password"));
         //covering the retryListeners
-        Assert.assertEquals(error_message, PropertiesReader.readKey("invalid_error_message"));
+        //Assert.assertEquals(error_message, PropertiesReader.readKey("invalid_error_message"));
+         Assert.assertEquals(error_message, PropertiesReader.readKey("error_message"));
 
     }
 }
