@@ -1,5 +1,6 @@
 package framework.listeners;
 
+import framework.utils.ScreenshotUtil;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
@@ -10,11 +11,20 @@ public class RetryAnalyzer implements IRetryAnalyzer {
 
     @Override
      public boolean retry(ITestResult iTestResult){
+        System.out.println("===== RETRY ANALYZER CALLED =====");
+        System.out.println("Retry count: " + retryCount);
+
         if(retryCount < maxCount) {
             retryCount++;
+            System.out.println("Retrying test...");
             return true;
         }
-         return false;
+        // Final failure after all retries
+        System.out.println("===== FINAL FAILURE - TAKING SCREENSHOT =====");
+        ScreenshotUtil.captureScreenshot(iTestResult.getName());
+
+        return false;
     }
+
 
 }

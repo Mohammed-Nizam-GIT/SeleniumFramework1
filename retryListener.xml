@@ -8,7 +8,7 @@
 
   <test verbose="2" preserve-order="true" name="ATB8xSeleniumAdvanceFramework">
     <classes>
-      <class name="framework.tests.VWOLoginTestcases.PageFactory_Testcases.TestVWO_Login">
+      <class name="framework.tests.sampleTestcases.ScreenshotTest">
       </class>
     </classes>
   </test>
