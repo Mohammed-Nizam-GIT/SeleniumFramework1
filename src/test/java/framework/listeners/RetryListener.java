@@ -14,8 +14,4 @@ public class RetryListener implements IAnnotationTransformer, ITestListener {
     public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
         annotation.setRetryAnalyzer(RetryAnalyzer.class);
     }
-    @Override
-    public void onTestFailure(ITestResult result) {
-
-    }
 }
