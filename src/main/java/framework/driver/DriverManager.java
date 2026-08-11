@@ -35,11 +35,6 @@ public class DriverManager {
 
                     // 🔴 ADDED: Recommended for CI/Jenkins execution
                     options.addArguments("--disable-gpu");
-                    // 🔴 ADDED: Helps Edge run under Jenkins SYSTEM
-                    options.addArguments("--no-sandbox");
-
-                    // 🔴 ADDED: Give Jenkins a separate Edge profile
-                    options.addArguments("--user-data-dir=C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\EdgeProfile");
 
                     options.addArguments("--window-size=1920,1080");
 
