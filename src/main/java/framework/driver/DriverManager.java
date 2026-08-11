@@ -39,7 +39,7 @@ public class DriverManager {
                     options.addArguments("--no-sandbox");
 
                     // 🔴 ADDED: Give Jenkins a separate Edge profile
-                    options.addArguments("--user-data-dir=C:\\Windows\\Temp\\JenkinsEdgeProfile");
+                    options.addArguments("--user-data-dir=C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\EdgeProfile");
 
                     options.addArguments("--window-size=1920,1080");
 
