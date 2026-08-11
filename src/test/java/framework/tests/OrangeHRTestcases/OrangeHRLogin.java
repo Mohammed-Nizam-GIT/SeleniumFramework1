@@ -9,15 +9,17 @@ import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import static org.assertj.core.api.Assertions.*;
+import framework.dataProviders.ExcelDataProvider;
 
 public class OrangeHRLogin extends CommonToAllTest {
 
     @Description("To verify Orange HR login wit positive credentials and verify the dashboard")
-    @Test
-    public void testORloginPositive(){
+    @Test(dataProvider = "loginData", dataProviderClass = ExcelDataProvider.class) //for datadriven
+    public void testORloginPositive(String username, String password){
 
         ORLoginPagePOM orLoginPagePOM = new ORLoginPagePOM(DriverManager.getDriver());
-        orLoginPagePOM.ORLoginPositive(PropertiesReader.readKey("ohr_username"),PropertiesReader.readKey("ohr_password"));
+        //orLoginPagePOM.ORLoginPositive(PropertiesReader.readKey("ohn_username"),PropertiesReader.readKey("ohn_password");
+        orLoginPagePOM.ORLoginPositive(username,password); //for datadriven
 
         ORDashboardPOM orDashboardPOM = new ORDashboardPOM(DriverManager.getDriver());
         String dashboardName = orDashboardPOM.UsernameInDashboard();

@@ -1,0 +1,14 @@
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="framework.listeners.RetryListener"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/intel/IdeaProjects/SeleniumFramework1/src/test/java/framework/tests/sampleTestcases/ScreenshotTest.java">
+        <classes>
+            <class name="framework.tests.sampleTestcases.ScreenshotTest">
+                <methods>
+                    <include name="screenshotTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -20,11 +20,11 @@ public class RetryAnalyzer implements IRetryAnalyzer {
             return true;
         }
         // Final failure after all retries
-        System.out.println("===== FINAL FAILURE - TAKING SCREENSHOT =====");
-        ScreenshotUtil.captureScreenshot(iTestResult.getName());
-
+        System.out.println("Final failure - no more retries");
         return false;
     }
-
+    public boolean isFinalAttempt() {
+        return retryCount >= maxCount;
+    }
 
 }
