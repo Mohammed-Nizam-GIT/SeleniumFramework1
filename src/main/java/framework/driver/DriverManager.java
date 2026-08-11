@@ -26,6 +26,7 @@ public class DriverManager {
         if (driver == null) {
             switch (browser) {
                 case "edge":
+                    // Jenkins headless Edge
                     // 🔴 ADDED: Create Edge options for headless execution
                     EdgeOptions options = new EdgeOptions();
 
