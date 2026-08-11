@@ -4,6 +4,7 @@ import framework.utils.PropertiesReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverManager {
@@ -25,8 +26,18 @@ public class DriverManager {
         if (driver == null) {
             switch (browser) {
                 case "edge":
-                    driver = new EdgeDriver();
-                    driver.manage().window().maximize();
+                    // 🔴 ADDED: Create Edge options for headless execution
+                    EdgeOptions options = new EdgeOptions();
+
+                    // 🔴 ADDED: Run Edge without opening a visible browser window
+                    options.addArguments("--headless=new");
+
+                    // 🔴 ADDED: Recommended for CI/Jenkins execution
+                    options.addArguments("--disable-gpu");
+                    options.addArguments("--window-size=1920,1080");
+
+                    // 🔴 CHANGED: Pass options to EdgeDriver
+                    driver = new EdgeDriver(options);
                     break;
 
                 case "chrome":
