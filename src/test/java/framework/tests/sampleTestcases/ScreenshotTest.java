@@ -10,6 +10,6 @@ public class ScreenshotTest extends CommonToAllTest {
     @NoRetry
     @Test
         public void screenshotTest() {
-            Assert.assertTrue(true);
+            Assert.assertTrue(false);
         }
     }
