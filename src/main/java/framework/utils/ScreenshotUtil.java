@@ -30,7 +30,6 @@ public class ScreenshotUtil {
 
         try {
             FileHandler.copy(source, destination);
-
             System.out.println("Screenshot saved: " + path);
 
             // Attach the same screenshot to Allure
@@ -48,7 +47,6 @@ public class ScreenshotUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return path;
     }
 }
