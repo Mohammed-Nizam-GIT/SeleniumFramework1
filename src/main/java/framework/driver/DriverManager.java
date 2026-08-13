@@ -3,6 +3,7 @@ package framework.driver;
 import framework.utils.PropertiesReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -43,8 +44,15 @@ public class DriverManager {
                     break;
 
                 case "chrome":
-                    driver = new ChromeDriver();
-                    driver.manage().window().maximize();
+
+                    ChromeOptions options1 = new ChromeOptions();
+
+                    options1.addArguments("--headless=new");
+                    options1.addArguments("--disable-gpu");
+                    options1.addArguments("--window-size=1920,1080");
+
+                    driver = new ChromeDriver(options1);
+
                     break;
 
                 case "firefox":
